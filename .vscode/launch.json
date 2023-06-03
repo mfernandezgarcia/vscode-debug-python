@@ -1,20 +1,33 @@
-{
+  "launch": {
     "version": "0.2.0",
     "configurations": [
-        {
-            "name": "Python: Attach using Process Id",
-            "type": "python",
-            "request": "attach",
-            "processId": "${command:pickProcess}",
-            "justMyCode": true
-        },
-        {
-            "name": "Python: Current File",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal",
-            "justMyCode": true
-        }
+      {
+        "name": "Python: Current File",
+        "type": "python",
+        "request": "launch",
+        "program": "${file}",
+        "console": "integratedTerminal"
+      },
+      {
+        "name": "Python: Attach using Process Id",
+        "type": "python",
+        "request": "attach",
+        "processId": "${command:pickProcess}",
+        "justMyCode": true
+      },
+      {
+        "name": "Attach",
+        "port": 9229,
+        "request": "attach",
+        "skipFiles": ["<node_internals>/**"],
+        "type": "node"
+      },
+      {
+        "name": "Angular debugging session",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:4200",
+        "webRoot": "${workspaceFolder}"
+      }
     ]
-}
+  }
